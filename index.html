@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.min.css">
+</head>
+<body>
+
+    <header class="hero is-medium is-info is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Calculadora de IMC
+                </h1>
+                <h2 class="subtitle">
+                    Calcule seu Índice de Massa Corporal
+                </h2>
+            </div>
+        </div>
+    </header>
+
+    <section class="section" id="div_calculate">
+        <div class="container">
+            <form id="form_imc_calculator">
+
+                <div class="field">
+                    <label class="label">Peso</label>
+                    <div class="control">
+                        <input class="input" type="number" min="0" name="weight" id="weight" placeholder="56" required>
+                    </div>
+                    <p class="help">Seu peso em Kg</p>
+                </div>
+                
+                <div class="field">
+                    <label class="label">Altura</label>
+                    <div class="control">
+                        <input class="input" type="number" step="0.01" max="3" name="height" id="height" placeholder="1,79" required>
+                    </div>
+                    <p class="help">Sua altura em metros</p>
+                </div>
+
+                <div class="control mt-4">
+                    <button class="button is-info">Calcular</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <section class="section is-hidden" id="div_result">
+        <div class="container">
+
+            <div class="tile is-ancestor box">
+                <p class="subtitle">Seu IMC é <strong class="title" id="result"></strong></p>
+            </div>
+
+            <div class="tile is-ancestor mt-3 is-hidden" id="description_a">
+                <article class="tile is-child notification is-warning">
+                    <p class="title">IMC menor do que 18,5</p>
+                    <div class="content">
+                        Peso abaixo do normal. Neste caso, é necessária a busca por um especialista, para verificar a existência de algum problema de saúde causador do índice abaixo do normal, ou analisar se sua saúde não está sendo afetada.problema de saúde causador do índice abaixo do normal, ou analisar se sua saúde não está sendo afetada.
+                    </div>
+                </article>
+            </div>
+            <div class="tile is-ancestor mt-3 is-hidden" id="description_b">
+                <article class="tile is-child notification is-success">
+                    <p class="title">IMC entre 18,5 e 24,9</p>
+                    <div class="content">
+                        São pesos considerados normais pela OMS. No entanto, mesmo nesta faixa de peso, deve-se ter atenção e cuidado com
+                        possíveis problemas metabólicos, principalmente se houver acúmulo de gordura na região interna do abdômen.
+                    </div>
+                </article>
+            </div>
+            <div class="tile is-ancestor mt-3 is-hidden" id="description_c">
+                <article class="tile is-child notification is-warning">
+                    <p class="title">Índice de 25 a 29,9</p>
+                    <div class="content">
+                        Peso em pré-obesidade ou acima do peso, representando um risco maior para a saúde. Nesta causa, é imprescindível uma
+                        consulta com um especialista, pois pode estar relacionado à pressão alta, colesterol alto ou diabetes, podendo apontar
+                        até para o hipotireoidismo. Este é o seu índice? Se sim, é tempo de consultar um profissional, realizar exames e pensar
+                        em uma reeducação alimentar e exercícios físicos.
+                    </div>
+                </article>
+            </div>
+            <div class="tile is-ancestor mt-3 is-hidden" id="description_d">
+                <article class="tile is-child notification is-danger">
+                    <p class="title">IMC entre 30 e 34,9</p>
+                    <div class="content">
+                        Este índice indica obesidade grau um. Este peso aumenta riscos para várias doenças, como diabetes, hipertensão arterial,
+                        o infarto do miocárdio e diversos tipos de câncer. A obesidade já é considerada uma comorbidade e necessita de
+                        tratamento profissional. O indicado é consultar um especialista e receber acompanhamento adequado.
+                    </div>
+                </article>
+            </div>
+            <div class="tile is-ancestor mt-3 is-hidden" id="description_e">
+                <article class="tile is-child notification is-danger">
+                    <p class="title">Índice de 35 a 39,9</p>
+                    <div class="content">
+                        Indica obesidade grau dois. Este peso já representa risco elevado para as doenças supracitadas. Como em todos os casos,
+                        mas neste impreterivelmente, deve-se buscar um profissional especializado e receber as orientações e medidas adequadas
+                        para obter uma saúde equilibrada.
+                    </div>
+                </article>
+            </div>
+            <div class="tile is-ancestor mt-3 is-hidden" id="description_f">
+                <article class="tile is-child notification is-danger">
+                    <p class="title">IMC a partir de 40</p>
+                    <div class="content">
+                        Indica obesidade grau três ou mórbida. O peso neste grau apresenta problemas extremamente graves e necessita
+                        de tratamento profissional com o máximo de recursos disponíveis, incluindo até cirurgia.
+                    </div>
+                </article>
+            </div>
+
+            <a class="button" id="new_calculation">Novo cálculo</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <small><strong>MBA Desenvolvimento Full Stack - IGTI</strong></small><br>
+                <small>
+                    <a href="https://docs.google.com/viewerng/viewer?url=https://online.igti.com.br/courses/793/files/21144/download?verifier%3DKrxEnbSOURVEGEZ2KGT8j1yTG4NRpbGSNqP3WiyQ">
+                        Atividade Prévia
+                    </a>
+                    da disciplina FFS (Fundamentos de Desenvolvimento Full Stack)
+                </small><br>
+                <small>Aluno: Lucas Furlan Ribeiro</small>
+            </p>
+        </div>
+    </footer>
+
+    <script src="./js/script.js" defer></script>
+</body>
+</html>
